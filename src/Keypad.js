@@ -44,7 +44,7 @@ function Keypad({ value, setValue }) {
   };
 
   const percent = () => {
-    setValue(value / 100);
+    setValue((value / 100).toString());
   };
 
   const doOperation = (e) => {
@@ -67,22 +67,22 @@ function Keypad({ value, setValue }) {
     { value: value === "0" ? "AC" : "C", class: "", handleClick: clear },
     { value: "+/-", class: "", handleClick: toggleSign },
     { value: "%", class: "", handleClick: percent },
-    { value: "÷", class: "op", handleClick: doOperation },
-    { value: "7", class: "num", handleClick: changeValue },
-    { value: "8", class: "num", handleClick: changeValue },
-    { value: "9", class: "num", handleClick: changeValue },
-    { value: "x", class: "op", handleClick: doOperation },
-    { value: "4", class: "num", handleClick: changeValue },
-    { value: "5", class: "num", handleClick: changeValue },
-    { value: "6", class: "num", handleClick: changeValue },
-    { value: "-", class: "op", handleClick: doOperation },
-    { value: "1", class: "num", handleClick: changeValue },
-    { value: "2", class: "num", handleClick: changeValue },
-    { value: "3", class: "num", handleClick: changeValue },
-    { value: "+", class: "op", handleClick: doOperation },
-    { value: "0", class: "num", handleClick: changeValue },
-    { value: ".", class: "num", handleClick: changeValue },
-    { value: "=", class: "op", handleClick: showResult },
+    { value: "÷", class: "Keypad-operator", handleClick: doOperation },
+    { value: "7", class: "Keypad-digit", handleClick: changeValue },
+    { value: "8", class: "Keypad-digit", handleClick: changeValue },
+    { value: "9", class: "Keypad-digit", handleClick: changeValue },
+    { value: "x", class: "Keypad-operator", handleClick: doOperation },
+    { value: "4", class: "Keypad-digit", handleClick: changeValue },
+    { value: "5", class: "Keypad-digit", handleClick: changeValue },
+    { value: "6", class: "Keypad-digit", handleClick: changeValue },
+    { value: "-", class: "Keypad-operator", handleClick: doOperation },
+    { value: "1", class: "Keypad-digit", handleClick: changeValue },
+    { value: "2", class: "Keypad-digit", handleClick: changeValue },
+    { value: "3", class: "Keypad-digit", handleClick: changeValue },
+    { value: "+", class: "Keypad-operator", handleClick: doOperation },
+    { value: "0", class: "Keypad-digit", handleClick: changeValue },
+    { value: ".", class: "Keypad-digit", handleClick: changeValue },
+    { value: "=", class: "Keypad-operator", handleClick: showResult },
   ];
 
   return (
@@ -95,7 +95,7 @@ function Keypad({ value, setValue }) {
              text-center p-2 Keypad-btn-container`}
           >
             <button
-              className={`h-100 w-100 
+              className={`h-100 w-100 Keypad-button
               ${key.value === "0" ? "Keypad-zero" : "rounded-circle"} 
               ${key.class}`}
               onClick={key.handleClick}

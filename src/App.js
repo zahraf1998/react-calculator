@@ -1,8 +1,10 @@
 import { useState } from "react";
-import "./App.css";
 import Keypad from "./Keypad";
+import "./App.css";
+
 function App() {
   const [value, setValue] = useState("0");
+
   return (
     <div className="App d-flex justify-content-center">
       <div className="App-container p-4">

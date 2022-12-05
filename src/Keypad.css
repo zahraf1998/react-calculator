@@ -2,21 +2,39 @@
   height: 84px;
 }
 
-.Keypad button {
-  font-size: 32px;
+.Keypad-button {
   background: #a5a5a5;
-  line-height: 64px;
   border: none;
+  font-size: 32px;
+  line-height: 64px;
+  transition: all 50ms ease-out;
 }
-.Keypad .op {
+.Keypad-button:active {
+  background: #fff;
+}
+
+.Keypad-operator {
   background: #fe9504;
   color: #fff;
+  transition: all 300ms ease-in-out;
 }
-.Keypad .num {
+
+.Keypad-operator:focus {
+  background: #fff;
+  color: #fe9504;
+}
+
+.Keypad-digit {
   background: #333333;
+  color: #fff;
+}
+.Keypad-digit:active {
+  background: #777777;
   color: #fff;
 }
 
 .Keypad-zero {
   border-radius: 40px;
+  padding-left: 25px;
+  text-align: left;
 }
