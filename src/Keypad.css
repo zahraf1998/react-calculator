@@ -28,6 +28,11 @@
   color: #fe9504;
 }
 
+.Keypad-operator:active {
+  background: #fff;
+  color: #fe9504;
+}
+
 .Keypad-digit {
   background: #333333;
   color: #fff;
