@@ -1,5 +1,5 @@
 import "./App.css";
-import Buttons from "./Buttons";
+import Keypad from "./Keypad";
 function App() {
   return (
     <div className="App d-flex justify-content-center">
@@ -10,7 +10,7 @@ function App() {
           className="App-input w-100"
           autoFocus
         ></input>
-        <Buttons />
+        <Keypad />
       </div>
     </div>
   );

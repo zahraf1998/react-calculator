@@ -1,8 +1,8 @@
 import React from "react";
-import "./Buttons.css";
+import "./Keypad.css";
 
-function Buttons() {
-  const buttons = [
+function Keypad() {
+  const keys = [
     { value: "AC", class: "" },
     { value: "+/-", class: "" },
     { value: "%", class: "" },
@@ -24,21 +24,20 @@ function Buttons() {
     { value: "=", class: "op" },
   ];
   return (
-    <div className="Buttons row">
-      {buttons.map((button, i) => {
+    <div className="Keypad row">
+      {keys.map((key, i) => {
         return (
           <div
             key={i}
-            className={`${
-              button.value === "0" ? "col-6" : "col-3"
-            } text-center p-2 Buttons-container`}
+            className={`${key.value === "0" ? "col-6" : "col-3"}
+             text-center p-2 Keypad-btn-container`}
           >
             <button
-              className={`p-2  h-100 w-100 ${
-                button.value === "0" ? "w-100 Buttons-zero" : "rounded-circle"
-              } ${button.class}`}
+              className={`h-100 w-100 
+              ${key.value === "0" ? "Keypad-zero" : "rounded-circle"} 
+              ${key.class}`}
             >
-              {button.value}
+              {key.value}
             </button>
           </div>
         );
@@ -47,4 +46,4 @@ function Buttons() {
   );
 }
 
-export default Buttons;
+export default Keypad;

@@ -1,22 +1,22 @@
-.Buttons-container {
+.Keypad-btn-container {
   height: 84px;
 }
 
-.Buttons button {
-  font-size: 30px;
+.Keypad button {
+  font-size: 32px;
   background: #a5a5a5;
+  line-height: 64px;
+  border: none;
 }
-.Buttons .op {
-  font-size: 30px;
+.Keypad .op {
   background: #fe9504;
   color: #fff;
 }
-.Buttons .num {
-  font-size: 30px;
+.Keypad .num {
   background: #333333;
   color: #fff;
 }
 
-.Buttons-zero {
+.Keypad-zero {
   border-radius: 40px;
 }
