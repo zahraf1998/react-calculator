@@ -3,6 +3,7 @@
 }
 
 .Keypad-button {
+  all: unset;
   background: #a5a5a5;
   border: none;
   color: #000;
