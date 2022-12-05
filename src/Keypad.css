@@ -3,13 +3,13 @@
 }
 
 .Keypad-button {
-  all: unset;
   background: #a5a5a5;
   border: none;
   color: #000;
   cursor: pointer;
   font-size: 32px;
   line-height: 67px;
+  padding: 0;
   text-align: center;
   transition: all 50ms ease-out;
 }
