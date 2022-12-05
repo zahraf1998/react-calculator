@@ -94,14 +94,14 @@ function Keypad({ value, setValue }) {
             className={`${key.value === "0" ? "col-6" : "col-3"}
              text-center p-2 Keypad-btn-container`}
           >
-            <div
+            <button
               className={`h-100 w-100 Keypad-button
               ${key.value === "0" ? "Keypad-zero" : "rounded-circle"} 
               ${key.class}`}
               onClick={key.handleClick}
             >
               {key.value}
-            </div>
+            </button>
           </div>
         );
       })}
