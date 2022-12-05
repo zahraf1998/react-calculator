@@ -1,6 +1,22 @@
-.button-container {
+.Buttons-container {
   height: 84px;
 }
+
 .Buttons button {
   font-size: 30px;
+  background: #a5a5a5;
+}
+.Buttons .op {
+  font-size: 30px;
+  background: #fe9504;
+  color: #fff;
+}
+.Buttons .num {
+  font-size: 30px;
+  background: #333333;
+  color: #fff;
+}
+
+.Buttons-zero {
+  border-radius: 40px;
 }

@@ -1,4 +1,17 @@
 .App-container {
   max-width: 360px;
   margin-top: 60px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #000;
+}
+
+.App-input {
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  caret-color: transparent;
+  font-size: 64px;
+  background: #000;
+  color: #fff;
 }
