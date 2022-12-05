@@ -6,14 +6,7 @@ function App() {
   return (
     <div className="App d-flex justify-content-center">
       <div className="App-container p-4">
-        <input
-          type="text"
-          inputMode="numeric"
-          value={value}
-          className="App-input w-100"
-          autoFocus
-          onChange={(e) => setValue(e.target.value)}
-        ></input>
+        <div className="App-display w-100">{value}</div>
         <Keypad value={value} setValue={setValue} />
       </div>
     </div>

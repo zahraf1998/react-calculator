@@ -1,9 +1,9 @@
-// import { useState } from "react";
-import React from "react";
 import "./Keypad.css";
+
 let result = 0;
 let operator = null;
 let operationDone = false;
+
 function Keypad({ value, setValue }) {
   const calculate = () => {
     if (operator === "+") {
@@ -15,26 +15,38 @@ function Keypad({ value, setValue }) {
     } else {
       result /= parseFloat(value);
     }
+    result = parseFloat(result.toPrecision(10)).toString();
   };
+
   const changeValue = (e) => {
+    const digit = e.target.innerHTML;
     setValue(
-      value === "0" || operationDone
+      (value === "0" && digit !== ".") || operationDone
         ? e.target.innerHTML
-        : value + e.target.innerHTML
+        : value + digit
     );
     operationDone = false;
   };
+
   const toggleSign = () => {
     setValue((0 - parseFloat(value)).toString());
   };
-  const clear = () => {
-    setValue("0");
-    operator = null;
-    result = 0;
+
+  const clear = (e) => {
+    if (e.target.innerHTML === "C" && operator) {
+      const newValue = value.slice(0, value.length - 1);
+      setValue(newValue === "" ? "0" : newValue);
+    } else {
+      setValue("0");
+      operator = null;
+      result = 0;
+    }
   };
+
   const percent = () => {
     setValue(value / 100);
   };
+
   const doOperation = (e) => {
     if (operator && !operationDone) {
       calculate();
@@ -44,13 +56,15 @@ function Keypad({ value, setValue }) {
     operator = e.target.innerHTML;
     operationDone = true;
   };
+
   const showResult = () => {
     if (operator) calculate();
     setValue(result);
     operator = null;
   };
+
   const keys = [
-    { value: "AC", class: "", handleClick: clear },
+    { value: value === "0" ? "AC" : "C", class: "", handleClick: clear },
     { value: "+/-", class: "", handleClick: toggleSign },
     { value: "%", class: "", handleClick: percent },
     { value: "÷", class: "op", handleClick: doOperation },
@@ -70,6 +84,7 @@ function Keypad({ value, setValue }) {
     { value: ".", class: "num", handleClick: changeValue },
     { value: "=", class: "op", handleClick: showResult },
   ];
+
   return (
     <div className="Keypad row">
       {keys.map((key, i) => {
